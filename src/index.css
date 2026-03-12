@@ -1,0 +1,340 @@
+/* ===============================
+   GLOBAL RESET
+=================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  overflow-x: hidden;
+}
+
+/* ===============================
+   MAIN GRID LAYOUT
+=================================*/
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "menu pbody pbody"
+    "footer footer footer";
+  grid-template-rows: 80px 1fr 50px;
+  grid-template-columns: 240px 1fr 1fr;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* ================= HEADER ================= */
+.header {
+  grid-area: header;
+  background: linear-gradient(135deg, #1b5e20, #2e7d32); /* Emerald Green */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.nav-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-btn {
+  background: white;
+  color: #1b5e20;
+}
+
+.signup-btn {
+  background: #ff7043;  /* Soft coral accent */
+  color: white;
+}
+
+.nav-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+
+/* ================= SIDEBAR ================= */
+.menu {
+  grid-area: menu;
+  background: linear-gradient(180deg, #2c2c2c, #3a3a3a); /* Charcoal */
+  color: white;
+  padding: 25px 15px;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.2);
+}
+
+.menu h3 {
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 8px;
+  font-weight: 500;
+  color: #81c784; /* Soft green highlight */
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu ul li {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.menu ul li:hover {
+  background: rgba(129,199,132,0.2); /* Light green hover */
+  transform: translateX(6px);
+}
+
+.menu ul li a.active {
+  background: #43a047; /* Matching emerald highlight */
+  font-weight: bold;
+}
+
+/* ================= PAGE BODY ================= */
+.pbody {
+  grid-area: pbody;
+  background: #f4f7fb;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.pbody h2 {
+  margin-bottom: 15px;
+  color: #1e3c72;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  grid-area: footer;
+  background: linear-gradient(135deg, #0f3d1e, #145a32); /* Dark Forest Green */
+  color: #f1f8f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.25);
+}
+
+
+/* ================= AUTH ================= */
+.auth-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-container {
+  background: white;
+  padding: 35px;
+  width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  animation: fadeIn 0.6s ease;
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e3c72;
+}
+
+.auth-form input,
+.auth-form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+  border-color: #2a5298;
+  box-shadow: 0 0 5px rgba(42,82,152,0.4);
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  color: white;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  transform: scale(1.03);
+}
+
+.switch-auth {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.switch-auth span {
+  color: #2a5298;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ================= HOME ================= */
+.home-container {
+  padding: 30px;
+}
+
+.home-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.home-hero h2 {
+  font-size: 34px;
+  color: #1e3c72;
+}
+
+.home-features {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  width: 260px;
+  padding: 25px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-card h3 {
+  margin: 10px 0;
+  color: #2a5298;
+}
+
+.feature-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 15px;
+  background: #ff9800;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+/* ================= ADMIN MODULE ================= */
+.admin-container {
+  padding: 30px;
+  background: #f4f7fb;
+  min-height: 100vh;
+}
+
+.admin-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1e3c72;
+  margin-bottom: 20px;
+}
+
+.dashboard-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 220px;
+  padding: 25px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ffffff, #e3f2fd);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.admin-table thead {
+  background: #1e3c72;
+  color: white;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px;
+}
+
+.admin-table tr:hover {
+  background: #f1f5f9;
+}
+
+.btn {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background: #e53935;
+  color: white;
+}
+
+.btn-add {
+  background: #43a047;
+  color: white;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
